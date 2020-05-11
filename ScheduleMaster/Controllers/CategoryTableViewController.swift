@@ -21,7 +21,7 @@ class CategoryTableViewController: SwipeCellViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
-        print(defaultPath)
+        //print(defaultPath)
         //let a = try context.fetch(NSFetchRequest(entityName: "Category"))
         //print(defaultPath)
         // Uncomment the following line to preserve selection between presentations
@@ -90,11 +90,14 @@ class CategoryTableViewController: SwipeCellViewController {
             }
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        
         addAlert.addTextField { (inputField) in
             inputField.placeholder = "type name of the category to create"
             tempField = inputField
         }
         
+        addAlert.addAction(cancelAction)
         addAlert.addAction(action)
         present(addAlert, animated: true)
     }

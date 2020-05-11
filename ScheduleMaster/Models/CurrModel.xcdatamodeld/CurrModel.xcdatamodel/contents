@@ -6,6 +6,7 @@
     </entity>
     <entity name="Items" representedClassName=".Items" syncable="YES" codeGenerationType="class">
         <attribute name="end" optional="YES" attributeType="String"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="reminder" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="start" optional="YES" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
@@ -13,6 +14,6 @@
     </entity>
     <elements>
         <element name="Categories" positionX="-45" positionY="0" width="128" height="73"/>
-        <element name="Items" positionX="-18" positionY="45" width="128" height="118"/>
+        <element name="Items" positionX="-18" positionY="45" width="128" height="133"/>
     </elements>
 </model>

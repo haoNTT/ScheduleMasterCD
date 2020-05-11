@@ -74,10 +74,32 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="q5M-5k-6tt" kind="show" identifier="ItemToTimeline" id="QOT-Lh-w0h"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZS7-RW-cgx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2720" y="130"/>
+        </scene>
+        <!--Timelines-->
+        <scene sceneID="wLn-j4-AFK">
+            <objects>
+                <tableViewController id="q5M-5k-6tt" customClass="TimelineTableViewController" customModule="ScheduleMaster" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mle-Yn-9UZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="q5M-5k-6tt" id="Qys-wT-ez2"/>
+                            <outlet property="delegate" destination="q5M-5k-6tt" id="S0S-mf-HAO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Timelines" id="fag-dJ-e0z"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1jN-B5-R4B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3584" y="130"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qdP-DB-pke">

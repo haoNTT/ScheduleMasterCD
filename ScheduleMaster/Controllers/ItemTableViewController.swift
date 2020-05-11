@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import SnapKit
+import TimelineTableViewCell
 
 class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -27,7 +28,6 @@ class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -58,11 +58,46 @@ class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, 
         return cell
     }
     
-    
     override func deletion(with indexPath: IndexPath) {
+        self.context.delete(self.itemArray![indexPath.row])
         if self.itemArray != nil {
             self.itemArray!.remove(at: indexPath.row)
         }
+        do {
+            try context.save()
+        } catch {
+            print("fail to delete item due to \(error)")
+        }
+    }
+    //MARK:- Table view selection section
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.itemArray != nil {
+            performSegue(withIdentifier: "ItemToTimeline", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TimelineTableViewController
+        // Set current selected items
+        destinationVC.currentSelected = self.itemArray![tableView.indexPathForSelectedRow?.row ?? 0]
+        
+        // Set all items in the timeline controller
+        if let safeItems = self.loadAllItems() {
+            destinationVC.allItems = safeItems
+        }
+    }
+    
+    func loadAllItems() -> [Items]? {
+        let request : NSFetchRequest<Items> = NSFetchRequest(entityName: "Items")
+        var allItemsRes: [Items]?
+        
+        do {
+            allItemsRes = try context.fetch(request)
+        } catch {
+            print("Fail to load all items due to \(error)")
+        }
+        
+        return allItemsRes
     }
     
     //MARK:- Picker data source
@@ -188,7 +223,6 @@ class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, 
     func saveItem() {
         do {
             try context.save()
-            print("here")
         } catch {
             print("fail to save item due to \(error)")
         }
@@ -196,6 +230,7 @@ class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, 
     
     func loadItem() {
         let request : NSFetchRequest<Items>=NSFetchRequest(entityName: "Items")
+        request.predicate = NSPredicate(format: "parentCategory.cateName MATCHES[cd] %@", self.selectedCategory!.cateName!)
         
         do {
             self.itemArray = try context.fetch(request)
