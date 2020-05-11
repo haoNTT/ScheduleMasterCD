@@ -3,29 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09FAF86C12241AAAF5F01AE0 /* Pods_ScheduleMaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3482B9ECDD167B7B5CC273D1 /* Pods_ScheduleMaster.framework */; };
+		860DDD4C246919C3003ECB12 /* CurrModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 860DDD4A246919C3003ECB12 /* CurrModel.xcdatamodeld */; };
 		866ACF8B246861590063917F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACF8A246861590063917F /* AppDelegate.swift */; };
 		866ACF8D246861590063917F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACF8C246861590063917F /* SceneDelegate.swift */; };
-		866ACF8F246861590063917F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACF8E246861590063917F /* ViewController.swift */; };
 		866ACF92246861590063917F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866ACF90246861590063917F /* Main.storyboard */; };
 		866ACF95246861590063917F /* ScheduleMaster.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 866ACF93246861590063917F /* ScheduleMaster.xcdatamodeld */; };
 		866ACF972468615C0063917F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 866ACF962468615C0063917F /* Assets.xcassets */; };
 		866ACF9A2468615C0063917F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 866ACF982468615C0063917F /* LaunchScreen.storyboard */; };
+		866ACFA624686AC00063917F /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACFA524686AC00063917F /* CategoryTableViewController.swift */; };
+		866ACFA82468838E0063917F /* SwipeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACFA72468838E0063917F /* SwipeCellViewController.swift */; };
+		866ACFAD2468969C0063917F /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACFAC2468969C0063917F /* ItemTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3482B9ECDD167B7B5CC273D1 /* Pods_ScheduleMaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScheduleMaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		860DDD4B246919C3003ECB12 /* CurrModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CurrModel.xcdatamodel; sourceTree = "<group>"; };
 		866ACF87246861590063917F /* ScheduleMaster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleMaster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		866ACF8A246861590063917F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		866ACF8C246861590063917F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		866ACF8E246861590063917F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		866ACF91246861590063917F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		866ACF94246861590063917F /* ScheduleMaster.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ScheduleMaster.xcdatamodel; sourceTree = "<group>"; };
 		866ACF962468615C0063917F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		866ACF992468615C0063917F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		866ACF9B2468615C0063917F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		866ACFA524686AC00063917F /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		866ACFA72468838E0063917F /* SwipeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellViewController.swift; sourceTree = "<group>"; };
+		866ACFAC2468969C0063917F /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
+		C076A5326C48836F1960390D /* Pods-ScheduleMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaster.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster.debug.xcconfig"; sourceTree = "<group>"; };
+		CC4F6CF209C4B56BD41FBA37 /* Pods-ScheduleMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaster.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09FAF86C12241AAAF5F01AE0 /* Pods_ScheduleMaster.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3940E09BD5CDA5F9F9EAED31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3482B9ECDD167B7B5CC273D1 /* Pods_ScheduleMaster.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		74324188382D0641940476C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C076A5326C48836F1960390D /* Pods-ScheduleMaster.debug.xcconfig */,
+				CC4F6CF209C4B56BD41FBA37 /* Pods-ScheduleMaster.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		866ACF7E246861590063917F = {
 			isa = PBXGroup;
 			children = (
 				866ACF89246861590063917F /* ScheduleMaster */,
 				866ACF88246861590063917F /* Products */,
+				74324188382D0641940476C4 /* Pods */,
+				3940E09BD5CDA5F9F9EAED31 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,15 +89,50 @@
 			isa = PBXGroup;
 			children = (
 				866ACF8A246861590063917F /* AppDelegate.swift */,
+				866ACFA42468683E0063917F /* Supporting Files */,
+				866ACFA32468682F0063917F /* Controllers */,
+				866ACFA2246868250063917F /* Views */,
+				866ACFA12468681D0063917F /* Models */,
 				866ACF8C246861590063917F /* SceneDelegate.swift */,
-				866ACF8E246861590063917F /* ViewController.swift */,
-				866ACF90246861590063917F /* Main.storyboard */,
-				866ACF962468615C0063917F /* Assets.xcassets */,
 				866ACF982468615C0063917F /* LaunchScreen.storyboard */,
 				866ACF9B2468615C0063917F /* Info.plist */,
-				866ACF93246861590063917F /* ScheduleMaster.xcdatamodeld */,
 			);
 			path = ScheduleMaster;
+			sourceTree = "<group>";
+		};
+		866ACFA12468681D0063917F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				860DDD4A246919C3003ECB12 /* CurrModel.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		866ACFA2246868250063917F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				866ACF90246861590063917F /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		866ACFA32468682F0063917F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				866ACFA72468838E0063917F /* SwipeCellViewController.swift */,
+				866ACFA524686AC00063917F /* CategoryTableViewController.swift */,
+				866ACFAC2468969C0063917F /* ItemTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		866ACFA42468683E0063917F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				866ACF93246861590063917F /* ScheduleMaster.xcdatamodeld */,
+				866ACF962468615C0063917F /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +142,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 866ACF9E2468615C0063917F /* Build configuration list for PBXNativeTarget "ScheduleMaster" */;
 			buildPhases = (
+				FEE5B81413EC8519A293EAD7 /* [CP] Check Pods Manifest.lock */,
 				866ACF83246861590063917F /* Sources */,
 				866ACF84246861590063917F /* Frameworks */,
 				866ACF85246861590063917F /* Resources */,
+				B2BE118B82C58BFA6CA2AC81 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +203,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B2BE118B82C58BFA6CA2AC81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE5B81413EC8519A293EAD7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScheduleMaster-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		866ACF83246861590063917F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				866ACFA82468838E0063917F /* SwipeCellViewController.swift in Sources */,
 				866ACF95246861590063917F /* ScheduleMaster.xcdatamodeld in Sources */,
-				866ACF8F246861590063917F /* ViewController.swift in Sources */,
 				866ACF8B246861590063917F /* AppDelegate.swift in Sources */,
+				860DDD4C246919C3003ECB12 /* CurrModel.xcdatamodeld in Sources */,
 				866ACF8D246861590063917F /* SceneDelegate.swift in Sources */,
+				866ACFA624686AC00063917F /* CategoryTableViewController.swift in Sources */,
+				866ACFAD2468969C0063917F /* ItemTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +398,7 @@
 		};
 		866ACF9F2468615C0063917F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C076A5326C48836F1960390D /* Pods-ScheduleMaster.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +417,7 @@
 		};
 		866ACFA02468615C0063917F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC4F6CF209C4B56BD41FBA37 /* Pods-ScheduleMaster.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +458,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		860DDD4A246919C3003ECB12 /* CurrModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				860DDD4B246919C3003ECB12 /* CurrModel.xcdatamodel */,
+			);
+			currentVersion = 860DDD4B246919C3003ECB12 /* CurrModel.xcdatamodel */;
+			path = CurrModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		866ACF93246861590063917F /* ScheduleMaster.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
