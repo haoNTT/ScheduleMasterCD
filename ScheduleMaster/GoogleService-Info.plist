@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>994884468956-3jd3b6jrnbar825pkdj3s4d9vof9ltua.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.994884468956-3jd3b6jrnbar825pkdj3s4d9vof9ltua</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAwpWffcH-1afK-0oE-7jWR9u590YXFp7M</string>
+	<key>GCM_SENDER_ID</key>
+	<string>994884468956</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.howardtian.ScheduleMaster</string>
+	<key>PROJECT_ID</key>
+	<string>schedulemaster-fc038</string>
+	<key>STORAGE_BUCKET</key>
+	<string>schedulemaster-fc038.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:994884468956:ios:5f16f80b5365b7ba5db419</string>
+	<key>DATABASE_URL</key>
+	<string>https://schedulemaster-fc038.firebaseio.com</string>
+</dict>
+</plist>

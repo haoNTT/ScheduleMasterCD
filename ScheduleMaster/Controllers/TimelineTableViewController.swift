@@ -56,6 +56,7 @@ class TimelineTableViewController: UITableViewController {
         if let safeItems = self.allItems, let safeIndex = selectedIdx {
             cell.titleLabel?.text = safeItems[indexPath.row].title
             cell.bubbleRadius = 10.0
+            cell.lineInfoLabel.text = self.allItems![indexPath.row].parentCategory?.cateName
             
             if self.allItems?[indexPath.row].note != nil {
                 cell.descriptionLabel.text = self.allItems?[indexPath.row].note

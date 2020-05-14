@@ -19,6 +19,10 @@
 		866ACFA82468838E0063917F /* SwipeCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACFA72468838E0063917F /* SwipeCellViewController.swift */; };
 		866ACFAD2468969C0063917F /* ItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866ACFAC2468969C0063917F /* ItemTableViewController.swift */; };
 		86B096F92469ADCD002E1C37 /* TimelineTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B096F82469ADCD002E1C37 /* TimelineTableViewController.swift */; };
+		86B7B55D246B5F8B00A9AA04 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 86B7B55C246B5F8B00A9AA04 /* GoogleService-Info.plist */; };
+		86B7B563246B847300A9AA04 /* FrontPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B7B562246B847300A9AA04 /* FrontPageViewController.swift */; };
+		86B7B565246B8F1600A9AA04 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B7B564246B8F1600A9AA04 /* SignupViewController.swift */; };
+		86B7B567246B8F2100A9AA04 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B7B566246B8F2100A9AA04 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +40,11 @@
 		866ACFA72468838E0063917F /* SwipeCellViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCellViewController.swift; sourceTree = "<group>"; };
 		866ACFAC2468969C0063917F /* ItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewController.swift; sourceTree = "<group>"; };
 		86B096F82469ADCD002E1C37 /* TimelineTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineTableViewController.swift; sourceTree = "<group>"; };
+		86B7B55C246B5F8B00A9AA04 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		86B7B55F246B80CF00A9AA04 /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		86B7B562246B847300A9AA04 /* FrontPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrontPageViewController.swift; sourceTree = "<group>"; };
+		86B7B564246B8F1600A9AA04 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignupViewController.swift; path = ScheduleMaster/Views/SignupViewController.swift; sourceTree = SOURCE_ROOT; };
+		86B7B566246B8F2100A9AA04 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C076A5326C48836F1960390D /* Pods-ScheduleMaster.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaster.debug.xcconfig"; path = "Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster.debug.xcconfig"; sourceTree = "<group>"; };
 		CC4F6CF209C4B56BD41FBA37 /* Pods-ScheduleMaster.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScheduleMaster.release.xcconfig"; path = "Target Support Files/Pods-ScheduleMaster/Pods-ScheduleMaster.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -90,6 +99,8 @@
 		866ACF89246861590063917F /* ScheduleMaster */ = {
 			isa = PBXGroup;
 			children = (
+				86B7B55E246B80BF00A9AA04 /* Fonts */,
+				86B7B55C246B5F8B00A9AA04 /* GoogleService-Info.plist */,
 				866ACF8A246861590063917F /* AppDelegate.swift */,
 				866ACFA42468683E0063917F /* Supporting Files */,
 				866ACFA32468682F0063917F /* Controllers */,
@@ -121,6 +132,9 @@
 		866ACFA32468682F0063917F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				86B7B564246B8F1600A9AA04 /* SignupViewController.swift */,
+				86B7B566246B8F2100A9AA04 /* LoginViewController.swift */,
+				86B7B562246B847300A9AA04 /* FrontPageViewController.swift */,
 				866ACFA72468838E0063917F /* SwipeCellViewController.swift */,
 				866ACFA524686AC00063917F /* CategoryTableViewController.swift */,
 				866ACFAC2468969C0063917F /* ItemTableViewController.swift */,
@@ -136,6 +150,14 @@
 				866ACF962468615C0063917F /* Assets.xcassets */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		86B7B55E246B80BF00A9AA04 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				86B7B55F246B80CF00A9AA04 /* OpenSans-Light.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				866ACF9A2468615C0063917F /* LaunchScreen.storyboard in Resources */,
+				86B7B55D246B5F8B00A9AA04 /* GoogleService-Info.plist in Resources */,
 				866ACF972468615C0063917F /* Assets.xcassets in Resources */,
 				866ACF92246861590063917F /* Main.storyboard in Resources */,
 			);
@@ -255,12 +278,15 @@
 			files = (
 				866ACFA82468838E0063917F /* SwipeCellViewController.swift in Sources */,
 				86B096F92469ADCD002E1C37 /* TimelineTableViewController.swift in Sources */,
+				86B7B565246B8F1600A9AA04 /* SignupViewController.swift in Sources */,
 				866ACF95246861590063917F /* ScheduleMaster.xcdatamodeld in Sources */,
 				866ACF8B246861590063917F /* AppDelegate.swift in Sources */,
 				860DDD4C246919C3003ECB12 /* CurrModel.xcdatamodeld in Sources */,
 				866ACF8D246861590063917F /* SceneDelegate.swift in Sources */,
+				86B7B563246B847300A9AA04 /* FrontPageViewController.swift in Sources */,
 				866ACFA624686AC00063917F /* CategoryTableViewController.swift in Sources */,
 				866ACFAD2468969C0063917F /* ItemTableViewController.swift in Sources */,
+				86B7B567246B8F2100A9AA04 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

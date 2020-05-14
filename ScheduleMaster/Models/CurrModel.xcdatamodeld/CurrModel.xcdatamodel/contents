@@ -3,6 +3,7 @@
     <entity name="Categories" representedClassName=".Categories" syncable="YES" codeGenerationType="class">
         <attribute name="cateName" attributeType="String"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Items" inverseName="parentCategory" inverseEntity="Items"/>
+        <relationship name="parentUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Users" inverseName="categories" inverseEntity="Users"/>
     </entity>
     <entity name="Items" representedClassName=".Items" syncable="YES" codeGenerationType="class">
         <attribute name="end" optional="YES" attributeType="String"/>
@@ -12,8 +13,13 @@
         <attribute name="title" attributeType="String"/>
         <relationship name="parentCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Categories" inverseName="items" inverseEntity="Categories"/>
     </entity>
+    <entity name="Users" representedClassName=".Users" syncable="YES" codeGenerationType="class">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Categories" inverseName="parentUser" inverseEntity="Categories"/>
+    </entity>
     <elements>
-        <element name="Categories" positionX="-45" positionY="0" width="128" height="73"/>
+        <element name="Categories" positionX="-282.0234375" positionY="-247.96875" width="128" height="88"/>
         <element name="Items" positionX="-18" positionY="45" width="128" height="133"/>
+        <element name="Users" positionX="-43.359375" positionY="-413.65234375" width="128" height="73"/>
     </elements>
 </model>
