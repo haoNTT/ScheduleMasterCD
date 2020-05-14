@@ -1,0 +1,6 @@
+framework module Pods_ScheduleMaster {
+  umbrella header "Pods-ScheduleMaster-umbrella.h"
+
+  export *
+  module * { export * }
+}
