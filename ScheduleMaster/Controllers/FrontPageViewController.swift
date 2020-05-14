@@ -17,14 +17,12 @@ class FrontPageViewController: UIViewController {
     
     @IBAction func signupPressed(_ sender: UIButton) {
         //performSegue(withIdentifier: "FrontToSignup", sender: self)
-        print("here to signup")
     }
     
     
     
     @IBAction func loginPressed(_ sender: UIButton) {
         //performSegue(withIdentifier: "FrontToLogin", sender: self)
-        print("here to login")
     }
     
 

@@ -15,6 +15,8 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var currentUser: Users?
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -31,10 +33,13 @@ class SignupViewController: UIViewController {
                 } else {
                     Auth.auth().createUser(withEmail: safeUsername, password: safePassword) { (result, error) in
                         if error != nil {
-                            print("Fail to register user due to \(error!)")
+                            self.registerAlert(with: error!.localizedDescription)
                             return
                         } else {
-                            print(result?.user.email ?? "None")
+//                            print(result?.user.email ?? "None")
+                            let newUser = Users(context: self.context)
+                            newUser.name = result?.user.email!
+                            self.currentUser = newUser
                             self.performSegue(withIdentifier: "SignupToCategory", sender: self)
                         }
                     }
@@ -58,7 +63,11 @@ class SignupViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //
+        // set the user variable in the category class
+        let destinationVC = segue.destination as! CategoryTableViewController
+        if let safeUser = self.currentUser {
+            destinationVC.currUser = safeUser
+        }
     }
     
 }

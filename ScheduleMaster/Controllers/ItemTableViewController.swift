@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import SnapKit
 import TimelineTableViewCell
+import Firebase
 
 class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -242,4 +243,35 @@ class ItemTableViewController: SwipeCellViewController, UIPickerViewDataSource, 
             self.tableView.reloadData()
         }
     }
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Operations?", message: "", preferredStyle: .actionSheet)
+        
+        let action1 = UIAlertAction(title: "Log out", style: .default) { (action) in
+            DispatchQueue.main.async {
+                do {
+                    try Auth.auth().signOut()
+                } catch let signOutError as NSError {
+                    self.logoutAlert(with: signOutError.localizedDescription)
+                }
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+        
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        
+        present(alert, animated: true)
+    }
+    
+    func logoutAlert(with message: String) {
+        let alert = UIAlertController(title: "Fail to log out", message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
+    
 }

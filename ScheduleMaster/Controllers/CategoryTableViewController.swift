@@ -8,19 +8,21 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class CategoryTableViewController: SwipeCellViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let defaultPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last!
     
+    var currUser: Users?
     var cateArray: [Categories]?
-    //var cateArray  = ["Category1", "Category2", "Category3"]
     var selected : Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        self.sanityCheck()
+        self.loadData()
         //print(defaultPath)
         //let a = try context.fetch(NSFetchRequest(entityName: "Category"))
         //print(defaultPath)
@@ -29,6 +31,23 @@ class CategoryTableViewController: SwipeCellViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    
+    func sanityCheck() {
+        if currUser == nil {
+            let alert = UIAlertController(title: "Warning", message: "No user logged in!", preferredStyle: .alert)
+            
+            let action = UIAlertAction(title: "Ok", style: .default) { (action) in
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+            
+            alert.addAction(action)
+            
+            present(alert, animated: true)
+        }
     }
 
     // MARK: - Table view data source
@@ -79,6 +98,8 @@ class CategoryTableViewController: SwipeCellViewController {
                 if safeString != "" {
                     let newCate = Categories(context: self.context)
                     newCate.cateName = safeString
+                    // Add parent user to category object 
+                    newCate.parentUser = self.currUser
                     if self.cateArray != nil {
                         self.cateArray!.append(newCate)
                     } else {
@@ -112,8 +133,32 @@ class CategoryTableViewController: SwipeCellViewController {
         }
     }
     
+    @IBAction func actionPressed(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Operations?", message: "", preferredStyle: .actionSheet)
+        
+        let action1 = UIAlertAction(title: "Log out", style: .default) { (action) in
+            DispatchQueue.main.async {
+                do {
+                    try Auth.auth().signOut()
+                } catch let signOutError as NSError {
+                    self.logoutAlert(with: signOutError.localizedDescription)
+                }
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+        }
+        
+        let action2 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(action1)
+        alert.addAction(action2)
+        
+        present(alert, animated: true)
+    }
+    
     func loadData() {
         let request = NSFetchRequest<Categories>(entityName: "Categories")
+        let predicate = NSPredicate(format: "parentUser.name MATCHES[cd] %@", self.currUser!.name!)
+        request.predicate = predicate
         
         do {
             try self.cateArray = context.fetch(request)
@@ -132,6 +177,15 @@ class CategoryTableViewController: SwipeCellViewController {
         } catch {
             print("Fail to save item due to \(error)")
         }
+    }
+    
+    func logoutAlert(with message: String) {
+        let alert = UIAlertController(title: "Fail to log out", message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
 }

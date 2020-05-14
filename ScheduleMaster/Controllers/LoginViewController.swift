@@ -15,6 +15,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userNameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
+    var loggedinUser: Users?
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +29,21 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(withEmail: safeUser, password: safePassword) { (result, error) in
                 if error != nil {
                     self.loginAlert(with: error!.localizedDescription)
-                    print("Fail to log in due to \(error!)")
                 } else {
-                    print(result?.user.email ?? "Fail to load name")
+                    //print(result?.user.email ?? "Fail to load name")
+                    let newUser = Users(context: self.context)
+                    newUser.name = safeUser
+                    self.loggedinUser = newUser
                     self.performSegue(withIdentifier: "LoginToCategory", sender: self)
                 }
             }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! CategoryTableViewController
+        if let safeUser = self.loggedinUser {
+            destinationVC.currUser = safeUser
         }
     }
     
